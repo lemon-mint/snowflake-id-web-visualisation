@@ -1,19 +1,15 @@
 {
   "name": "snowflake-id-web-visualisation",
-  "version": "1.0.0",
-  "description": "snowflake on web!",
-  "main": "index.js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lemon-mint/snowflake-id-web-visualisation.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/lemon-mint/snowflake-id-web-visualisation/issues"
-  },
-  "homepage": "https://github.com/lemon-mint/snowflake-id-web-visualisation#readme"
+  "devDependencies": {
+    "typescript": "^4.6.4",
+    "vite": "^3.2.0"
+  }
 }

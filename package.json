@@ -1,0 +1,19 @@
+{
+  "name": "snowflake-id-web-visualisation",
+  "version": "1.0.0",
+  "description": "snowflake on web!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemon-mint/snowflake-id-web-visualisation.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lemon-mint/snowflake-id-web-visualisation/issues"
+  },
+  "homepage": "https://github.com/lemon-mint/snowflake-id-web-visualisation#readme"
+}

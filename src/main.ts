@@ -61,8 +61,9 @@ async function GetServerOffset(server?: string): Promise<[number, string]> {
 }
 
 const snowflake_h2 = document.getElementById("snfid") as HTMLElement;
-const nodeid = Math.round(Math.random() * (1 << 12)) % (1 << 12);
+const nodeid = Math.round(Math.random() * (1 << 10)) % (1 << 10);
 const copy_btn = document.getElementById("copy-btn") as HTMLButtonElement;
+const epoch_start = 1420070400000;
 
 async function copy(text: string): Promise<boolean> {
   if (navigator.clipboard) {
@@ -103,10 +104,10 @@ const AnimationFrameFunc: FrameRequestCallback = () => {
     now = last;
     ctr++;
   }
-  snowflake = BigInt(now) & ((BigInt(1) << BigInt(41)) - BigInt(1)); // 41 bits for timestamp
+  snowflake = BigInt(now-epoch_start) & ((BigInt(1) << BigInt(41)) - BigInt(1)); // 41 bits for timestamp
   snowflake = snowflake << BigInt(22); // shift 22 bits
-  snowflake |= BigInt(nodeid & ((1 << 12) - 1)) << BigInt(12); // 12 bits for node id
-  snowflake |= BigInt(ctr & ((1 << 10) - 1)); // 10 bits for counter
+  snowflake |= BigInt(nodeid & ((1 << 10) - 1)) << BigInt(12); // 10 bits for node id
+  snowflake |= BigInt(ctr & ((1 << 12) - 1)); // 12 bits for counter
   let text = "UnixMilli: " + now + "\n";
   text += "NodeID: 0x" + PadZero(nodeid.toString(16).toUpperCase(), 3) + "\n";
   text += "Sequence: " + ctr.toString() + "\n";

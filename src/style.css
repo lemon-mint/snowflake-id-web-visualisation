@@ -145,4 +145,19 @@ h2 {
 
 body {
   font-family: 'IBM Plex Mono', monospace;
+  background-color: #393E46;
+  color: #F7F7F7;
+}
+
+.btn {
+  margin: auto;
+  margin-top: 1em;
+  width: 100%;
+
+  border-radius: 0px;
+  border-width: 0.25em;
+  border-style: solid;
+  border-color: #F2E7D5;
+  background-color: #393E46;
+  color: #F7F7F7;
 }
